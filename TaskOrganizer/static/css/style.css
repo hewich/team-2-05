@@ -1,0 +1,26 @@
+body{
+    background-color: skyblue;
+}
+
+.form_style{
+    background-color: azure;
+    margin-left: 500px;
+    margin-right: 500px;
+    border: 2px;
+    border-radius: 5px;
+}
+
+.form_style p{
+    padding: 5px;
+}
+
+
+.button-home{
+    background-color: green;
+    text-align: center;
+    margin-left: 270px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    padding: 15px 32px;
+
+}
