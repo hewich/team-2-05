@@ -1,11 +1,12 @@
 from flask import render_template, flash, redirect, url_for
 from myapp import app
+from myapp import db
 from myapp.form import Login, RegisterForm
 from myapp.models import User
 
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home',methods=['GET', 'POST'])
 def home():
 
     name = 'Sai'
@@ -15,17 +16,17 @@ def home():
     return render_template('home.html', title=title, name=name, form=form)
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
 
     title = 'Register'
     form = RegisterForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data,
+        users = User(username=form.username.data, email=form.email.data,
                     first_name=form.first_name.data, last_name=form.last_name.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
+        users.set_password(form.password.data)
+        db.session.add(users)
         db.session.commit()
-        flash('Account created for {form.first_name.data}!')
+        flash('Account created!')
         return redirect(url_for('home'))
     return render_template('register.html', title=title, form=form)

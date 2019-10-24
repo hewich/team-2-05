@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from config import Config
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'some-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 from myapp import routes, models

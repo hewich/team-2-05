@@ -8,7 +8,8 @@
     {% endfor %}
 </ul>
 
-<form action="">
+<form action="" method="post">
+    {{form.hidden_tag()}}
     <p>
         {{form.user_name.label}}
         {{form.user_name(size=32)}}

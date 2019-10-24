@@ -6,7 +6,8 @@
 
 <h1 align="center">Register for Task Organizer</h1>
 <div class="form_style">
-    <form action="">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
         <p>{{form.first_name.label}}<br>{{form.first_name(size=32, placeholder="Enter First Name")}}</p>
         <p>{{form.last_name.label}}<br>{{form.last_name(size=32,placeholder="Enter Last Name")}}</p>
         <p>{{form.username.label}}<br>{{form.username(size=32, placeholder="Enter User Name")}}</p>
