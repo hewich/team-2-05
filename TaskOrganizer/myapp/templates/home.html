@@ -1,26 +1,16 @@
 {% extends "base.html"%}
 {% block content %}
-<h2 align="center"> Task Organizer! </h2>
 
-<ul>
-    {% for top_cities in top_cities %}
-    <li>{{top_cities}}</li>
-    {% endfor %}
-</ul>
+<!---
+<div id="center">
+--->
 
-<form action="" method="post">
-    {{form.hidden_tag()}}
-    <p>
-        {{form.user_name.label}}
-        {{form.user_name(size=32)}}
-    </p>
-    <p>
-        {{form.password.label}}&nbsp;&nbsp;&nbsp;
-        {{form.password(size= 24)}}
-    </p>
+<body class="text-center">
+    <div class="mx-auto">
+        <h1> Welcome to Task Organizer! </h1 <br>
+        <hr>
+        <a href="/login" class="btn btn-info" role="button"><b>Sign In</b></a>
 
-    <p> {{form.login()}}</p>
-</form>
-
-<p>New User? <button type="button" name="register" onclick="window.location.href = '/register'; ">Click to register</button></p>
-{% endblock %}
+    </div>
+    </<body>
+    {% endblock %}
