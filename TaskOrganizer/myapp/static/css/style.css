@@ -1,7 +1,53 @@
 body{
-    background-color: skyblue;
+    background-color: gray !important;
 }
 
+h1.title{
+    align:center;
+}
+
+.mx-auto h1 {
+    font-family: Trattatello, fantasy;
+}
+
+.mx-auto1 h1 {
+    font-family: Trattatello, fantasy;
+}
+hr{
+
+    position: relative;
+    border-width: thick;
+    width: 50%;
+
+}
+
+.btn-block{
+    display: block;
+    width: 50%
+}
+
+.form-signin{
+    width: 100%;
+    max-width:330px;
+    padding:15px;
+    margin:auto;
+}
+
+.text-center{
+
+    text-align: center;
+}
+.mx-auto{
+
+    padding-top: 19%;
+
+}
+
+.mx-auto2{
+
+    padding-top: 10%;
+
+}
 .form_style{
     background-color: azure;
     margin-left: 500px;
@@ -13,7 +59,6 @@ body{
 .form_style p{
     padding: 5px;
 }
-
 
 .button-home{
     background-color: green;
