@@ -1,0 +1,70 @@
+<!-- the log in template  -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="hero">
+<p style="text-align:left;"> <a href="home">back to home </a>  </p>
+    <div class = "content-section">
+        <form  action=" " method="post">
+                {{ form.hidden_tag() }}
+                <fieldset class = "form-group">
+
+
+                      <div class = "form-group">
+                        <b>
+                        {{ form. email.label(class =" form-control-label")}}
+                        {% if form.email.errors %}
+                            {{ form. email(class =" form-control  form-control-lg is-invalid")}}
+                            <div class=" invalid-feedback">
+                                  {% for error in form.email.errors %}
+                                      <span>{{ error }}</span>
+                                  {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form. email(class =" form-control  form-control-lg")}}
+                        {% endif %}
+
+                        </b>
+                       </div>
+
+                       <div class = "form-group">
+                         <b>
+                         {{ form.password.label(class =" form-control-label")}}
+                         {% if form.password.errors %}
+                             {{ form. password(class =" form-control  form-control-lg is-invalid")}}
+                             <div class=" invalid-feedback">
+                                   {% for error in form.password.errors %}
+                                       <span>{{ error }}</span>
+                                   {% endfor %}
+                             </div>
+                         {% else %}
+                             {{ form. password(class =" form-control  form-control-lg")}}
+                         {% endif %}
+
+                         </b>
+                        </div>
+
+                         <div class = "form-group">
+                           <b>
+                         {{ form. submit(class =" btn btn-outline-info")}}
+                        <!-- <a class="ml-2" href = "{{url_for('login')}}">log in</a> -->
+                        </b>
+                        </div>
+
+
+                </fieldset>
+        </form>
+
+    </div>
+
+    <div class="border-top pt-3">
+          <small class = "text-muted ">
+                  create new account? <a class="ml-2" href = "{{url_for('register')}}"> create now</a>
+          </small>
+
+    </div>
+
+    </div>
+
+{% endblock content %}
