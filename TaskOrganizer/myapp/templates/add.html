@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+
+    <h1> Add Task </h1>
+    <div>
+        Add a new task item:
+        <form action="{{ url_for('add')}}" method="POST">
+            <input type = "text" name = "taskitem">
+            <input type = "submit">
+        </form>
+
+    </div>
+
+    <div>
+        <ul>
+            {% for task in tasks%}
+            <li style = "font-size: 30pt"><input type="checkbox">{{task.text}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
