@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class = "content-section">
+        <form  action=" " method="post">
+                {{ form.hidden_tag() }}
+                <fieldset class = "form-group">
+                   <legend class ="border bottom mb-4"><center><b>Add Your Task</b></center> </legend>
+
+
+                      {{% for task in tasks %}}
+                      <li input type="checkbox"> task </li>
+                      {{% endfor %}}
+
+
+
+                      <a href="remove"><b> remove </b> </a>    &nbsp   &nbsp    &nbsp     &nbsp     &nbsp    &nbsp
+                      <a href="view"><b> view </b> </a>
+
+                     <br>
+                     <br>
+
+
+
+
+                       <div class = "form-group">
+                         <b>{{ form. submit(class =" btn btn-outline-info")}}</b>
+                      </div>
+                </fieldset>
+        </form>
+
+    </div>
+{% endblock content %}
