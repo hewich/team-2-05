@@ -1,12 +1,14 @@
 from flask import render_template, flash, redirect, url_for, Markup
+from werkzeug.urls import url_parse
+
 from myapp import app
 from myapp import db
-from myapp.form import LoginForm, RegisterForm
+from myapp.form import LoginForm, RegisterForm, TaskForm
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
-from myapp.models import User
+from myapp.models import User, Task
 
 
 @app.route('/')
@@ -74,3 +76,25 @@ def login():
         return redirect(next_page)
 
     return render_template('login.html', title=title, form=form)
+
+
+#@app.route ('/')
+#def ind():
+   # tasks = Task.query.all()
+
+  #  return render_template('add.html', tasks= tasks)
+#
+@app.route ('/add', methods = ['GET', 'POST'])
+def add():
+
+    title = 'Add | Task Organizer'
+
+    # task = TaskForm(request.form)
+    task = TaskForm()
+    print('hefasdfasf')
+    if task.validate_on_submit():
+
+        tasks = Task(task_name=task.task_name.data, description=task.description.data, due_date=task.due_date.data)
+        db.session.add(tasks)
+        db.session.commit()
+    return render_template('add.html', title="add task", form=task)

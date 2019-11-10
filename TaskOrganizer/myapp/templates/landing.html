@@ -12,6 +12,17 @@
         <a class="btn btn-outline-primary" href="/register">Register</a>
     </div>
 </div>
+<body class="text-center">
 <h1>Welcome {{current_user.username}}</h1>
 
+
+<a class="btn btn-success" href="/add">Add Task</a>
+<a class="btn btn-danger pull right" href="/remove">Remove Task</a>
+<a class="btn btn-primary" href="/view"> View Task</a>
+
+<!--<input> type="text" placeholder="enter task"><br>-->
+<!--<a class="btn btn-outline-primary" href="/add">add task</a>-->
+
+
+</body>
 {% endblock %}

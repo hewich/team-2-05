@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+    <h1> Add Task </h1>
+    <div>
+        Add a new task item:
+        <form action="" method="post"><br>
+            {{form.hidden_tag()}}
+            <p>
+            {{form.task_name.label}}
+            {{form.task_name(size=32)}}
+            </p>
+
+            <p>
+            {{form.description.label}}
+            {{form.description(size=32)}}
+            </p>
+
+            <p>
+            {{form.due_date.label}}
+            {{form.due_date(size=32)}}
+            </p>
+
+            </p>
+             <p>{{ form.submit() }}</p>
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>

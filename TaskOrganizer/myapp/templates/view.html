@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+<div>
+        <ul>
+            {% for task in tasks%}
+            <li style = "font-size: 30pt"><input type="checkbox">{{task.text}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>

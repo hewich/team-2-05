@@ -16,3 +16,10 @@ class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class TaskForm(FlaskForm):
+    task_name = StringField('Task Name')
+    description = StringField('Description: ')
+    due_date = StringField('Due Date')
+    submit = SubmitField('Submit')
+
