@@ -77,6 +77,13 @@ def login():
 
     return render_template('login.html', title=title, form=form)
 
+@app.route('/view')
+@login_required
+def landing():
+    tasks = Task.query.all()
+
+    
+    return render_template('view.html', tasks = tasks)
 
 #@app.route ('/')
 #def ind():
