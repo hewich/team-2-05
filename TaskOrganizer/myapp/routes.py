@@ -109,3 +109,16 @@ def view():
 
         return redirect(url_for('view'))
     return render_template('view.html', title=title, form=form, tasks=tasks)
+
+@app.route('/remove', methods=['GET', 'POST'])
+def remove():
+    title = 'Remove | Task Organizer'
+    tasks = Task.query.all()
+
+    form = TaskForm()
+    if form.validate_on_submit():
+        db.session.add(tasks)
+        db.session.commit()
+
+        return redirect(url_for('remove'))
+    return render_template('remove.html', title=title, form=form, tasks=tasks)

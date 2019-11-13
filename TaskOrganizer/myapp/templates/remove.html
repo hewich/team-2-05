@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block content %}
+    <div class= "text-center">
+         <h1> Remove Task </h1>
+
+       Remove a task item:
+        <form action="/view" method="POST">
+            {{form.hidden_tag()}}
+            <p>
+                Task Name: <input type="text" name = 'task_name'>
+
+            </p>
+
+            <p>
+                 Description: <input type="text" name = 'description'>
+            </p>
+
+
+            <p>{{form.submit()}}</p>
+
+        </form>
+
+   </div>
+
+{% endblock %}
