@@ -14,7 +14,12 @@
             </p>
 
             <p>
-                 Description: <input type="text" name = 'description'>
+                Description: <input type="text" name = 'description'>
+
+            </p>
+            <p>
+                Due Date: <input type="text" name = 'due_date'>
+
             </p>
 
 
@@ -30,7 +35,8 @@
             {% for task in tasks%}
             <li>
                 <p>{{task.task_name}}</p>
-                <p>{{task.description}}</p>
+                 <p>{{task.description}}</p>
+                 <p>{{task.due_date}}</p>
 
             </li>
             {% endfor %}

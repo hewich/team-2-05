@@ -19,6 +19,6 @@ class RegisterForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     task_name = StringField('Task Name:')
-    description = StringField('Description')
-    #due_date = StringField('Due Date:')
-    submit = SubmitField('Submit')
+    description = StringField('Description:')
+    due_date = StringField('Due Date:')
+    remove = SubmitField('Submit')

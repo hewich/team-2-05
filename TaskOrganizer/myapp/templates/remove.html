@@ -1,10 +1,11 @@
 {% extends "base.html"%}
 {% block content %}
+
     <div class= "text-center">
          <h1> Remove Task </h1>
 
        Remove a task item:
-        <form action="/view" method="POST">
+        <form action="/remove" method="POST">
             {{form.hidden_tag()}}
             <p>
                 Task Name: <input type="text" name = 'task_name'>
@@ -15,11 +16,31 @@
                  Description: <input type="text" name = 'description'>
             </p>
 
+            <p>
+                 Due Date: <input type="text" name = 'description'>
+            </p>
+
 
             <p>{{form.submit()}}</p>
 
         </form>
 
    </div>
+
+<div>
+        <h1>Tasks:</h1>
+        <ul>
+            {% for task in tasks%}
+            <li>
+                <p>{{task.task_name}}</p>
+                 <p>{{task.description}}</p>
+                 <p>{{task.due_date}}</p>
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
 
 {% endblock %}

@@ -1,19 +1,22 @@
 {% extends "base.html"%}
 {% block content %}
 
-   <div class= "text-center">
-         <h1> View Task </h1>
-
+   <div class>
+       <h1> View Task </h1>
         Added task(s) below:
-
-            {% for task in tasks%}
-            <li>
-                {{task.task_name}}
-                <p>{{task.description}}</p>
+       <ul>
+           {% for task in tasks%}
+           <li>
+               {{task.task_name}}
+                <p></p>
+                {{task.description}}
+                <p></p>
+                {{task.due_date}}
+                <p></p>
 
             </li>
             {% endfor %}
-
+        </ul>
    </div>
 
 {% endblock %}

@@ -88,36 +88,32 @@ def add():
 
     form = TaskForm()
     if form.validate_on_submit():
-        tasks = Task(task_name=request.form['task_name'], description=request.form['description'])
+        tasks = Task(task_name=request.form['task_name'], description =request.form['description'], due_date=request.form['due_date'])
         db.session.add(tasks)
         db.session.commit()
 
         return redirect(url_for('add'))
     return render_template('add.html', title=title, form=form, tasks=tasks)
 
-@app.route('/view', methods=['GET', 'POST'])
+@app.route('/view')
 def view():
     title = 'View | Task Organizer'
 
     tasks = Task.query.all()
 
-    form = TaskForm()
-    if form.validate_on_submit():
-        tasks = Task(task_name=request.form['task_name'], description=request.form['description'])
-        db.session.add(tasks)
-        db.session.commit()
 
-        return redirect(url_for('view'))
-    return render_template('view.html', title=title, form=form, tasks=tasks)
+    return render_template('view.html', title=title, tasks=tasks)
 
-@app.route('/remove', methods=['GET', 'POST'])
+@app.route('/remove')
 def remove():
     title = 'Remove | Task Organizer'
     tasks = Task.query.all()
 
     form = TaskForm()
+
     if form.validate_on_submit():
-        db.session.add(tasks)
+        tasks = Task.query.filter_by(task_name=request.form['task_name'], description =request.form['description'], due_date=request.form['due_date']).one()
+        db.session.delete(tasks)
         db.session.commit()
 
         return redirect(url_for('remove'))
