@@ -21,4 +21,4 @@ class TaskForm(FlaskForm):
     task_name = StringField('Task Name:')
     description = StringField('Description:')
     due_date = StringField('Due Date:')
-    remove = SubmitField('Submit')
+    submit = SubmitField('Submit')

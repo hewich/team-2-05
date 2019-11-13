@@ -88,7 +88,7 @@ def add():
 
     form = TaskForm()
     if form.validate_on_submit():
-        tasks = Task(task_name=request.form['task_name'], description =request.form['description'], due_date=request.form['due_date'])
+        tasks = Task(task_name=request.form['task_name'], description =request.form['description'], due_date =request.form['due_date'])
         db.session.add(tasks)
         db.session.commit()
 
@@ -104,7 +104,7 @@ def view():
 
     return render_template('view.html', title=title, tasks=tasks)
 
-@app.route('/remove')
+@app.route('/remove', methods=['GET', 'POST'])
 def remove():
     title = 'Remove | Task Organizer'
     tasks = Task.query.all()
@@ -112,7 +112,8 @@ def remove():
     form = TaskForm()
 
     if form.validate_on_submit():
-        tasks = Task.query.filter_by(task_name=request.form['task_name'], description =request.form['description'], due_date=request.form['due_date']).one()
+        tasks = Task.query.filter_by(task_name=request.form['task_name'], description =request.form['description'],
+                                     due_date=request.form['due_date']).one()
         db.session.delete(tasks)
         db.session.commit()
 

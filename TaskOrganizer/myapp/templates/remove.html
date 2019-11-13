@@ -1,6 +1,14 @@
 {% extends "base.html"%}
 {% block content %}
-
+<div class="mx-auto1">
+    <div class="navbar navbar-expand-md navbar-light bg-light">
+    <h1 class="my-0 mr-md-auto font-weight-normal">Task Organizer</h1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+             <a class="p-2 text-dark" href="/landing">Home</a>
+             <a class="p-2 text-dark" href="/logout">Logout</a>
+        </nav>
+    </div>
+</div>
     <div class= "text-center">
          <h1> Remove Task </h1>
 
@@ -16,9 +24,11 @@
                  Description: <input type="text" name = 'description'>
             </p>
 
-            <p>
-                 Due Date: <input type="text" name = 'description'>
+             <p>
+                 Due Date: <input type="text" name = 'due_date'>
             </p>
+
+
 
 
             <p>{{form.submit()}}</p>
@@ -28,13 +38,13 @@
    </div>
 
 <div>
-        <h1>Tasks:</h1>
+        <h2>Tasks:</h2>
         <ul>
             {% for task in tasks%}
             <li>
                 <p>{{task.task_name}}</p>
                  <p>{{task.description}}</p>
-                 <p>{{task.due_date}}</p>
+                  <p>{{task.due_date}}</p>
 
             </li>
             {% endfor %}
