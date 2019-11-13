@@ -9,17 +9,34 @@
     <h1> Add Task </h1>
     <div>
         Add a new task item:
-        <form action="{{ url_for('add')}}" method="POST">
-            <input type = "text" name = "taskitem">
-            <input type = "submit">
+        <form action="/add" method="POST">
+            {{form.hidden_tag()}}
+            <p>
+                Task Name: <input type="text" name = 'task_name'>
+
+            </p>
+
+            <p>
+                 Description: <input type="text" name = 'description'>
+
+            </p>
+
+            <p>
+                 Due Date: <input type="text" name = 'due_date'>
+
+            </p>
+
+            <p>{{form.submit()}}</p>
+
         </form>
 
     </div>
 
     <div>
+        Added task(s) below:
         <ul>
             {% for task in tasks%}
-            <li style = "font-size: 30pt"><input type="checkbox">{{task.text}}</li>
+            <li>{{task.task_name}}</li>
             {% endfor %}
         </ul>
     </div>

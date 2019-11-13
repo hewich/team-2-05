@@ -18,7 +18,7 @@ class RegisterForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class TaskForm(FlaskForm):
-    task_name = StringField('First Name', validators=[DataRequired()])
-    description = StringField('First Name', validators=[DataRequired()])
-    due_date = StringField('First Name', validators=[DataRequired()])
+    task_name = StringField('Task Name:')
+    description = StringField('Description')
+    due_date = StringField('Due Date:')
     submit = SubmitField('Submit')
