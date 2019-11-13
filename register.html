@@ -1,0 +1,37 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div class="mx-auto1">
+    <div class="navbar navbar-expand-md navbar-light bg-light">
+        <h1 class="my-0 mr-md-auto font-weight-normal">Task Organizer</h1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="p-2 text-light" href="#">Features</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="/logout">Logout</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="/register">Register</a>
+    </div>
+</div>
+
+<div class="form_style">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>{{form.first_name.label}}<br>{{form.first_name(size=32, placeholder="Enter First Name")}}</p>
+        <p>{{form.last_name.label}}<br>{{form.last_name(size=32,placeholder="Enter Last Name")}}</p>
+        <p>{{form.username.label}}<br>{{form.username(size=32, placeholder="Enter User Name")}}</p>
+        <p>{{form.email.label}}<br>{{form.email(size=32, placeholder="Enter Email")}}</p>
+        <p>{{form.password.label}}<br>{{form.password(size=18)}}</p>
+        <p>{{form.submit()}}</p>
+
+
+
+
+
+    </form>
+
+    <button type=" button" name="home" class="button-home" onclick="window.location.href = '/home'; ">Go Home</button>
+</div>
+
+{% endblock%}

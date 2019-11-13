@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="mx-auto1">
+    <div class="navbar navbar-expand-md navbar-light bg-light">
+        <h1 class="my-0 mr-md-auto font-weight-normal">Task Organizer</h1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="p-2 text-light" href="#">Features</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="/logout">Logout</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="/register">Register</a>
+    </div>
+</div>
+<div class="mx-auto2">
+
+    <body class="text-center">
+        <form class="form-signin" action="" method="post">
+            {{form.hidden_tag()}}
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            {{form.username.label(class="sr-only")}}
+            {{form.username(size=32,placeholder="User Name", class="form-control")}}
+
+            <p>
+                {{form.password.label(class="sr-only")}}&nbsp;&nbsp;&nbsp;
+                {{form.password(size= 24, placeholder="Password", class="form-control")}}
+            </p>
+            {{form.login(class="btn btn-lg btn-primary")}}
+        </form>
+    </body>
+</div>
+
+{% endblock %}
