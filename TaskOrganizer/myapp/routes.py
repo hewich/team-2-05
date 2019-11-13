@@ -84,13 +84,28 @@ def add():
 
     title = 'Add | Task Organizer'
 
-    taskz = Task.query.all()
+    tasks = Task.query.all()
 
     form = TaskForm()
     if form.validate_on_submit():
-        tasks = Task(task_name= request.form['task_name'], description=request.form['description'], due_date=request.form['due_date'])
+        tasks = Task(task_name=request.form['task_name'], description=request.form['description'])
         db.session.add(tasks)
         db.session.commit()
 
         return redirect(url_for('add'))
-    return render_template('add.html', title=title, form=form, taskz=taskz)
+    return render_template('add.html', title=title, form=form, tasks=tasks)
+
+@app.route('/view', methods=['GET', 'POST'])
+def view():
+    title = 'View | Task Organizer'
+
+    tasks = Task.query.all()
+
+    form = TaskForm()
+    if form.validate_on_submit():
+        tasks = Task(task_name=request.form['task_name'], description=request.form['description'])
+        db.session.add(tasks)
+        db.session.commit()
+
+        return redirect(url_for('view'))
+    return render_template('view.html', title=title, form=form, tasks=tasks)

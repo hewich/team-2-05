@@ -30,11 +30,11 @@ class Task(db.Model):
     #body = db.Column(db.String(256))
     task_name = db.Column(db.String(64), unique=True, nullable=False)
     description = db.Column(db.String(300), unique=True, nullable=False)
-    due_date = db.Column(db.String(64), unique=True, nullable=False)
+    #due_date = db.Column(db.String(64), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Task {}>'.format(self.task_name, self.description, self.due_date)
+        return '<Task {}>'.format(self.task_name, self.description)
 
 
 @login.user_loader
