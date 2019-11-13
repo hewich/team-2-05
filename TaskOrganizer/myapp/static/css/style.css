@@ -41,6 +41,10 @@ hr{
 .text-center{
     text-align: center;
 }
+
+#text-center{
+    text-align: center;
+}
 .mx-auto{
 
     padding-top: 19%;

@@ -1,12 +1,12 @@
 from flask import render_template, flash, redirect, url_for, Markup
 from myapp import app
 from myapp import db
-from myapp.form import LoginForm, RegisterForm
+from myapp.form import LoginForm, RegisterForm, TaskForm
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
-from myapp.models import User
+from myapp.models import User, Task
 
 
 @app.route('/')
@@ -46,9 +46,9 @@ def register():
         db.session.commit()
 
         #message = Markup()
-        flash('Account Created!, {string(users.first_name)}')
+        flash('Account Created!' + str(users.first_name))
         # print("Account!")
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
     return render_template('register.html', title=title, form=form)
 
 
@@ -74,3 +74,23 @@ def login():
         return redirect(next_page)
 
     return render_template('login.html', title=title, form=form)
+
+
+@app.route('/add', methods=['GET', 'POST'])
+def add():
+
+    title = 'Add | Task Organizer'
+
+    tasks = Task.query.all()
+    # task = TaskForm(request.form)
+    task = TaskForm()
+    print('hefasdfasf')
+    if task.validate_on_submit():
+
+        tasks = Task(task_name=request.form['task_name'])
+        db.session.add(tasks)
+        db.session.commit()
+
+        return redirect(url_for('add'))
+
+    return render_template('add.html', title="add task", form=task, tasks=tasks)
