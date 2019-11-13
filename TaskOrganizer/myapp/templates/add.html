@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
     <h1> Add Task </h1>
     <div>
@@ -36,9 +32,12 @@
         Added task(s) below:
         <ul>
             {% for task in tasks%}
-            <li>{{task.task_name}}</li>
+            <li>
+                {{task.task_name}}
+                {{task.description}}
+                {{task.due_date}}
+            </li>
             {% endfor %}
         </ul>
     </div>
-</body>
-</html>
+{% endblock %}
