@@ -21,6 +21,10 @@ hr{
 
 }
 
+.view hr{
+    width
+}
+
 #remove:hover{
     background-color:red;
 
@@ -42,9 +46,13 @@ hr{
     text-align: center;
 }
 
-#text-center{
+.text-center ul{
     text-align: center;
+    list-style: inside;
 }
+
+
+
 .mx-auto{
 
     padding-top: 19%;

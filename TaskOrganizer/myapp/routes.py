@@ -22,8 +22,12 @@ def home():
 
 @app.route('/logout')
 def logout():
+    user = current_user
+    user.authenticated = False
+    db.session.add(user)
+    db.session.commit()
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
 
 @app.route('/landing')
@@ -87,10 +91,37 @@ def add():
     print('hefasdfasf')
     if task.validate_on_submit():
 
-        tasks = Task(task_name=request.form['task_name'])
+        tasks = Task(task_name=request.form['task_name'], user_id=current_user.id)
         db.session.add(tasks)
         db.session.commit()
 
         return redirect(url_for('add'))
 
     return render_template('add.html', title="add task", form=task, tasks=tasks)
+
+
+@app.route('/view')
+def view():
+    title = 'View | Task Organizer'
+    tasks = Task.query.filter_by(user_id=current_user.id)
+
+    organize = Task.query.filter_by(user_id=current_user.id).order_by(Task.task_name)
+
+    return render_template('view.html', title=title, tasks=tasks, organize=organize)
+
+
+@app.route('/remove', methods=['GET', 'POST'])
+def remove():
+    title = 'Remove | Task Organizer'
+    tasks = Task.query.all()
+
+    form = TaskForm()
+
+    if form.validate_on_submit():
+        tasks = Task.query.filter_by(
+            task_name=request.form['task_name']).one()
+        db.session.delete(tasks)
+        db.session.commit()
+
+        return redirect(url_for('remove'))
+    return render_template('remove.html', title=title, form=form, tasks=tasks)
