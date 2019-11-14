@@ -12,12 +12,16 @@ To run the app go to myrunapp.py and press on the terminal
 
 Click==7.0
 Flask==1.1.1
+Flask-Login==0.4.1
 Flask-SQLAlchemy==2.4.1
+Flask-WTF==0.14.2
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.10.1
 MarkupSafe==1.1.1
-SQLAlchemy==1.3.10
+SQLAlchemy==1.3.8
+virtualenv==16.7.7
 Werkzeug==0.16.0
+WTForms==2.2.1
 
 
 ## Features Description 
