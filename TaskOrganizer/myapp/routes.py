@@ -49,7 +49,7 @@ def register():
         db.session.add(users)
         db.session.commit()
 
-        #message = Markup()
+        # message = Markup()
         flash('Account Created!' + str(users.first_name))
         # print("Account!")
         return redirect(url_for('login'))
@@ -113,8 +113,9 @@ def view():
 @app.route('/remove', methods=['GET', 'POST'])
 def remove():
     title = 'Remove | Task Organizer'
-    tasks = Task.query.all()
+    # tasks = Task.query.all()
 
+    tasks = Task.query.filter_by(user_id=current_user.id)
     form = TaskForm()
 
     if form.validate_on_submit():
