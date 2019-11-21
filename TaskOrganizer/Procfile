@@ -1,1 +1,1 @@
-web: gunicorn -k eventlet Taskorganizer:app
+web: gunicorn -k eventlet myapprun:app
