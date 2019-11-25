@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+{% block content %}
+
+<div class="mx-auto1">
+    <div class="navbar navbar-expand-md navbar-light bg-light">
+        <h1 class="my-0 mr-md-auto font-weight-normal">Task Organizer</h1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="btn btn-outline-primary" href="/logout">Logout</a>
+            &nbsp
+            <a class="btn btn-outline-primary disabled" href="/register">Register</a>
+        </nav>
+    </div>
+</div>
+
+<div class="mx-auto2">
+
+    <body class="text-center">
+        <h1>Welcome {{current_user.first_name}}</h1>
+        <hr>
+        <p style="font-size:22px"><b>What would you like to do today?</b></p>
+        <a class="btn btn-outline-primary" href="/add">Add Task</a>
+        &nbsp;
+        <a class="btn  btn-outline-primary" id="remove" href="/remove">Remove Task</a>
+        &nbsp;
+        <a class="btn btn-outline-primary" href="/view">View</a>
+    </body>
+
+</div>
+{% endblock %}
