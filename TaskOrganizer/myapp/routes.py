@@ -119,10 +119,8 @@ def remove():
     form = TaskForm()
 
     if form.validate_on_submit():
-        tasks = Task.query.filter_by(
-            task_name=request.form['task_name']).one()
+        tasks = Task.query.filter_by(task_name=request.form['task_name']).one()
         db.session.delete(tasks)
         db.session.commit()
-
         return redirect(url_for('remove'))
     return render_template('remove.html', title=title, form=form, tasks=tasks)
