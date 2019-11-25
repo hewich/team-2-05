@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.com/hewich/team-2-05.svg?branch=master)](https://travis-ci.com/hewich/team-2-05)
+
 # Task Organizer CMPE 131
 
 ## Project Description
