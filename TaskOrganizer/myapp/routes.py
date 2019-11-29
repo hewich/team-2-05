@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 
 from myapp import app
 from myapp import db
-from myapp.form import LoginForm, RegisterForm, TaskForm
+from myapp.form import LoginForm, RegisterForm, TaskForm, ForgotForm
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
@@ -52,6 +52,25 @@ def register():
         # print("Account!")
         return redirect(url_for('home'))
     return render_template('register.html', title=title, form=form)
+
+@app.route('/forgot', methods=['GET', 'POST'])
+def forgot():
+
+    title = 'Forgot Password | Task Organizer'
+    user = User.query.all()
+    form = ForgotForm()
+
+    if form.validate_on_submit():
+        username= form.username.data
+        email=form.email.data,
+
+        #message = Markup()
+        flash('Password Retrieved!, {string(users.first_name)}')
+        # print("Account!")
+        return redirect(url_for('home'))
+    return render_template('forgot.html', title=title, form=form)
+
+
 
 
 @app.route('/login', methods=['GET', 'POST'])

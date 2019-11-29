@@ -5,31 +5,23 @@
 <div class="mx-auto1">
     <div class="navbar navbar-expand-md navbar-light bg-light">
         <h1 class="my-0 mr-md-auto font-weight-normal">Task Organizer</h1>
-        <nav class="navbar navbar-expand-md navbar-light bg-light"></nav>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        </nav>
     </div>
 </div>
 
 <p>
-    <div class = "text-center">
-    <h2> Register For an Account: </h2>
-
-    </div>
+<div class= "text-center">
+    <h2>Forgot Password? Enter the following information!</h2>
+</div>
 </p>
 
 <div class="form_style">
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <p>{{form.first_name.label}}<br>{{form.first_name(size=32, placeholder="Enter First Name")}}</p>
-        <p>{{form.last_name.label}}<br>{{form.last_name(size=32,placeholder="Enter Last Name")}}</p>
         <p>{{form.username.label}}<br>{{form.username(size=32, placeholder="Enter User Name")}}</p>
         <p>{{form.email.label}}<br>{{form.email(size=32, placeholder="Enter Email")}}</p>
-        <p>{{form.password.label}}<br>{{form.password(size=18)}}</p>
         <p>{{form.submit()}}</p>
-
-
-
-
-
     </form>
 
     <button type=" button" name="home" class="button-home" onclick="window.location.href = '/home'; ">Go Home</button>
