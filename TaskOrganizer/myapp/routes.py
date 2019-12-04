@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for, Markup
 from myapp import app
 from myapp import db
-from myapp.form import LoginForm, RegisterForm, TaskForm
+from myapp.form import LoginForm, RegisterForm, TaskForm, ForgotForm
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
@@ -46,6 +46,7 @@ def register():
         users = User(username=form.username.data, email=form.email.data,
                      first_name=form.first_name.data, last_name=form.last_name.data)
         users.set_password(form.password.data)
+        users.set_answer(form.question.data)
         db.session.add(users)
         db.session.commit()
 
@@ -91,7 +92,8 @@ def add():
     print('hefasdfasf')
     if task.validate_on_submit():
 
-        tasks = Task(task_name=request.form['task_name'], user_id=current_user.id)
+        tasks = Task(task_name=request.form['task_name'],
+                     description=request.form['description'], user_id=current_user.id)
         db.session.add(tasks)
         db.session.commit()
 
@@ -119,8 +121,58 @@ def remove():
     form = TaskForm()
 
     if form.validate_on_submit():
-        tasks = Task.query.filter_by(task_name=request.form['task_name']).one()
+        tasks = Task.query.filter_by(task_name=request.form['task_name']).first()
         db.session.delete(tasks)
         db.session.commit()
         return redirect(url_for('remove'))
     return render_template('remove.html', title=title, form=form, tasks=tasks)
+
+
+@app.route('/delete_all', methods=['POST'])
+def delete_all():
+
+    title = 'Remove | Task Organizer'
+    Task.query.delete()
+    tasks = Task.query.all()
+    db.drop_all(tasks)
+    db.session.commit()
+    tasks = Task.query.all()
+    form = TaskForm()
+    # if request.form['Yes']:
+    #    print('Check here')
+#   #     flash('Here')
+#
+#        return redirect(url_for('remove'))
+    return render_template('remove.html', title=title, form=form, tasks=tasks)
+
+
+@app.route('/forgot', methods=['GET', 'POST'])
+def forgot_password():
+
+    title = 'Forgot Password | Task Organizer'
+
+    form = ForgotForm()
+    print('hiss')
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        print('foo')
+        if user.check_answer(form.question.data):
+            print('moo')
+            return redirect(url_for('reset'))
+
+    return render_template('forgot.html', title=title, form=form)
+
+
+@app.route('/reset', methods=['GET', 'POST'])
+def reset():
+    title = 'Reset Password | Task Organizer'
+    form = ForgotForm()
+    print('hi')
+    if form.validate_on_submit():
+        print('hello')
+        user = User.query.filter_by(username=form.username.data).first()
+        user.set_password(form.reset_password.data)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('reset.html', title=title, form=form)
