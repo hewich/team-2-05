@@ -12,4 +12,4 @@ login = LoginManager(app)
 # right side is the function that's called to login users
 login.login_view = 'login'
 
-from myapp import routes, models
+from TaskOrganizer.myapp import routes, models
