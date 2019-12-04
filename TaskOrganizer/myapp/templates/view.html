@@ -17,19 +17,37 @@
 </div>
 
 <ul>
-    {% for task in tasks %}
-    <li><span>{{task.task_name}}<span></li>
-    {% endfor %}
-</ul>
-<div class="text-center">
-    <a class="btn btn-outline-primary" href="/organize">Organize</a>
-</div>
-<hr class="view">
-<h1> Organize </h1>
 
+    <table>
+        <tr>
+            <th>Task Name</th>
+            <th>Description</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td><span>{{task.task_name}}<span></td>
+            <td><span>{{task.description}}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
+
+<hr class="view">
+<div class="text-center">
+    <h1> Organize </h1>
+</div>
 <ul>
-    {% for task in organize %}
-    <li><span>{{task.task_name}}<span></li>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>Task Name</th>
+            <th>Description</th>
+        </tr>
+        {% for task in organize %}
+        <tr>
+            <td><span>{{task.task_name}}<span></td>
+            <td><span>{{task.description}}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
 </ul>
 {% endblock %}

@@ -1,5 +1,6 @@
 body{
     background-color: gray !important;
+    counter-reset: tasks
 }
 
 h1.title{
@@ -84,4 +85,15 @@ hr{
     font-size: 16px;
     padding: 15px 32px;
 
+}
+
+table{
+    border-collapse: collapse;
+    width: 25%
+}
+
+td,th{
+    border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }

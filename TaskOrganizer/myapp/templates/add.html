@@ -19,12 +19,19 @@
     <div>
         Add a new task item:
         <form action="/add" method="post">
+            <br>
             {{form.hidden_tag()}}
+            <p>Task: <input type="text" class="form-control-sm" id="taskname" name="task_name" aria-describedby="basic-addon1"> </p>
+            <p>Description: <input type="text" class="form-control-sm" name="description" aria-describedby="basic-addon1"> </p>
+            <script type="text/javascript">
+                function testing() {
+                    var task = document.getElementById('taskname').value;
+                    alert("Added Task: " + task)
+                }
+            </script>
 
-            <p>
-                Task: <input type="text" class="form-control-sm" name="task_name" aria-describedby="basic-addon1">
-                {{ form.submit() }}
-            </p>
+            <button type="submit" class="btn-outline-primary" onclick="testing()">Submit</button>
+
         </form>
     </div>
 
