@@ -1,7 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-from TaskOrganizer.myapp import db
+from TaskOrganizer import db
 from flask_login import UserMixin
-from TaskOrganizer.myapp import login
+from TaskOrganizer import login
 
 
 class User(UserMixin, db.Model):

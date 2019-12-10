@@ -1,12 +1,11 @@
-from flask import render_template, flash, redirect, url_for, Markup
-from TaskOrganizer.myapp import app
-from TaskOrganizer.myapp import db
-from TaskOrganizer.myapp.form import LoginForm, RegisterForm, TaskForm, ForgotForm
-from flask_login import current_user, login_user
-from flask_login import logout_user
-from flask_login import login_required
-from flask import request
-from TaskOrganizer.myapp.models import User, Task
+from flask import render_template, redirect, url_for, request, flash
+from flask_login import login_required, current_user, login_user, logout_user
+from werkzeug.urls import url_parse
+
+from .forms import LoginForm, RegisterForm, TaskForm, ForgotForm
+from . import db
+from flask import current_app as app
+from .models import User, Task
 
 
 @app.route('/')
@@ -62,6 +61,13 @@ def login():
 
     title = 'Login | Task Organizer'
 
+    print('testing')
+    user = User.query.all()
+
+    for u in user:
+        print(u.username, u.first_name)
+
+    print('end testing')
     if current_user.is_authenticated:
         return redirect(url_for('landing'))
 
