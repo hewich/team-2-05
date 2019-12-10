@@ -9,7 +9,7 @@ TESTDB_URI = 'sqlite:///' + TESTDB_PATH
 
 @pytest.fixture(scope='module')
 def app():
-    from myapp import create_app
+    from TaskOrganizer import create_app
     app = create_app({'TESTING': True,
                       'SQLALCHEMY_DATABASE_URI': TESTDB_URI,
                       'SQLALCHEMY_TRACK_MODIFICATIONS':  False,
@@ -33,12 +33,11 @@ def client(app_context):
 @pytest.fixture(scope='module')
 def db(app_context):
 
-    from myapp.models import User
-    from myapp import db
+    from TaskOrganizer import db
+    from TaskOrganizer.models import User
     db.create_all()
 
     yield db
 
     db.drop_all()
-    #os.unlink(TESTDB_PATH)
-#Not sure what this is but it causes pytest issues
+    os.unlink(TESTDB_PATH)
