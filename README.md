@@ -40,33 +40,60 @@ Features:
 7. View: Create a copy of the added task. 
 8. Organize: Organize the task name alphabically.
 
+## documentation
+
+Team-2-05//TaskOrganizer/Docs/Build/html
+
+## Built With
+
+Python 
+SQLAlchemy
+Bootstrap 
+javascript
+HTML/CSS
+reStructuredText
+
 ## File location of test cases and how to run them
 
 Use case 1 and 2: 
 Sign In/Registration
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Registration and Sign In page. Also, inside of the folder named tamplate we can find a home.html file where the sign in buttom is located and the register.html file where the register page is located. 
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Registration and Sign In page. Also, inside of the folder named tamplate we can find a home.html file where the sign in buttom is located and the register.html file where the register page is located. 
 
 Use case 3:
 Add Task
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the add task function. Also, inside of the folder named tamplate we can find the file add.html that allowed us to add and save the task in the website.
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the add task function. Also, inside of the folder named tamplate we can find the file add.html that allowed us to add and save the task in the website.
 
 Use case 4: 
 Remove Task
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Remove Task. Also, inside of the folder named templates we can find the file remove.html that allowed us to remove the previustly saved task in the website.
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Remove Task. Also, inside of the folder named templates we can find the file remove.html that allowed us to remove the previustly saved task in the website.
 
-Use case 5: 
+Use Case 5:
+Remove All
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Remove all Task. Also, inside of the folder named templates we can find the file remove.html that allowed us to remove all the previustly saved task in the website.
+
+Use case 6: 
 View Task
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the View Task.Also, inside of the folder named templates we can find the file view.html that allowed us to view the previustly added task. 
-
-Use case 6:
-Log Out 
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Log Out. Since login and logout are connected the main necesary file is routes.py.
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the View Task.Also, inside of the folder named templates we can find the file view.html that allowed us to view the previustly added task. 
 
 Use case 7:
+Log Out 
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Log Out. Since login and logout are connected the main necesary file is routes.py.
+
+Use case 8:
 Organize Task
-Inside of myapp folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Organize Task. Also, inside of the folder named templates we can find the file organize.html that allowed us to organize the task by alphabetical name. 
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Organize Task. Also, inside of the folder named templates we can find the file organize.html that allowed us to organize the task by alphabetical name. 
+
+Use case 9:
+reset Password
+Inside of Task Organizer folder we can find the all the necesary tabs such as  __init__.py, forms.py, models.py, routes.py necesary for the functionality of the database with the Organize Task. Also, inside of the folder named templates we can find the file reset.html that allowed us to create new password by prompting the user to enter their favorite color they signed up with. 
 
 
+Authors:
+
+Saikiran Vaidhyanathan
+Hewan Mekuria 
+Natalia krutzfeldt
+Emilio Chavoya
 
 
 
