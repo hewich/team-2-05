@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="English">
+  <head>
+    <meta charset="utf-8" />
+    <title>Functions &#8212; Task Organizer Dec 9. 2019 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="App tutorial" href="tutorial.html" />
+    <link rel="prev" title="Instructions in how to run this app" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-forms">
+<span id="functions"></span><h1>Functions<a class="headerlink" href="#module-forms" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="forms.ForgotForm">
+<em class="property">class </em><code class="sig-prename descclassname">forms.</code><code class="sig-name descname">ForgotForm</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#forms.ForgotForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form Validation with WTForm</p>
+<p>Arg: We define a User ForgotForm which ask the user to enter their user name, security question and the new reset
+password.</p>
+<p>Return: A Forgot Form.</p>
+<dl class="attribute">
+<dt id="forms.ForgotForm.question">
+<code class="sig-name descname">question</code><em class="property"> = &lt;UnboundField(PasswordField, ('Secret Question',), {})&gt;</em><a class="headerlink" href="#forms.ForgotForm.question" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.ForgotForm.reset">
+<code class="sig-name descname">reset</code><em class="property"> = &lt;UnboundField(SubmitField, ('Reset',), {})&gt;</em><a class="headerlink" href="#forms.ForgotForm.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.ForgotForm.reset_password">
+<code class="sig-name descname">reset_password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Password',), {})&gt;</em><a class="headerlink" href="#forms.ForgotForm.reset_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.ForgotForm.username">
+<code class="sig-name descname">username</code><em class="property"> = &lt;UnboundField(StringField, ('User Name',), {})&gt;</em><a class="headerlink" href="#forms.ForgotForm.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="forms.LoginForm">
+<em class="property">class </em><code class="sig-prename descclassname">forms.</code><code class="sig-name descname">LoginForm</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#forms.LoginForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form Validation with WTForm.</p>
+<p>Arg: We define a user LoginForm which ask the user to enter their user name and password.
+This classes are represented by the WTForm package.</p>
+<p>Return: A Login Form.</p>
+<dl class="attribute">
+<dt id="forms.LoginForm.login">
+<code class="sig-name descname">login</code><em class="property"> = &lt;UnboundField(SubmitField, ('Login',), {})&gt;</em><a class="headerlink" href="#forms.LoginForm.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.LoginForm.password">
+<code class="sig-name descname">password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Password',), {})&gt;</em><a class="headerlink" href="#forms.LoginForm.password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.LoginForm.username">
+<code class="sig-name descname">username</code><em class="property"> = &lt;UnboundField(StringField, ('User Name',), {})&gt;</em><a class="headerlink" href="#forms.LoginForm.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="forms.RegisterForm">
+<em class="property">class </em><code class="sig-prename descclassname">forms.</code><code class="sig-name descname">RegisterForm</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#forms.RegisterForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form Validation with WTForm.</p>
+<p>Arg: We define a User RegisterForm which ask the user to enter their first name, last name, username, email,
+security question and password.
+This classes are represented by the WTForm package.</p>
+<p>Return: A Registration Form.</p>
+<dl class="attribute">
+<dt id="forms.RegisterForm.email">
+<code class="sig-name descname">email</code><em class="property"> = &lt;UnboundField(StringField, ('Email',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;, &lt;wtforms.validators.Email object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.first_name">
+<code class="sig-name descname">first_name</code><em class="property"> = &lt;UnboundField(StringField, ('First Name',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.first_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.last_name">
+<code class="sig-name descname">last_name</code><em class="property"> = &lt;UnboundField(StringField, ('Last Name',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.last_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.password">
+<code class="sig-name descname">password</code><em class="property"> = &lt;UnboundField(PasswordField, ('Password',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.question">
+<code class="sig-name descname">question</code><em class="property"> = &lt;UnboundField(PasswordField, ('Secret Question',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.question" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.submit">
+<code class="sig-name descname">submit</code><em class="property"> = &lt;UnboundField(SubmitField, ('Submit',), {})&gt;</em><a class="headerlink" href="#forms.RegisterForm.submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.RegisterForm.username">
+<code class="sig-name descname">username</code><em class="property"> = &lt;UnboundField(StringField, ('User Name',), {'validators': [&lt;wtforms.validators.DataRequired object&gt;]})&gt;</em><a class="headerlink" href="#forms.RegisterForm.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="forms.TaskForm">
+<em class="property">class </em><code class="sig-prename descclassname">forms.</code><code class="sig-name descname">TaskForm</code><span class="sig-paren">(</span><em class="sig-param">formdata=&lt;object object&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#forms.TaskForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form Validation with WTForm.</p>
+<p>Arg: We define a User TaskForm which ask the user to enter a task name and description.</p>
+<p>Return: A Task Form.</p>
+<dl class="attribute">
+<dt id="forms.TaskForm.description">
+<code class="sig-name descname">description</code><em class="property"> = &lt;UnboundField(StringField, ('Description',), {})&gt;</em><a class="headerlink" href="#forms.TaskForm.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.TaskForm.submit">
+<code class="sig-name descname">submit</code><em class="property"> = &lt;UnboundField(SubmitField, ('Submit',), {})&gt;</em><a class="headerlink" href="#forms.TaskForm.submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.TaskForm.task_name">
+<code class="sig-name descname">task_name</code><em class="property"> = &lt;UnboundField(StringField, ('Task Name',), {})&gt;</em><a class="headerlink" href="#forms.TaskForm.task_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="forms.TaskForm.yes">
+<code class="sig-name descname">yes</code><em class="property"> = &lt;UnboundField(SubmitField, ('Yes',), {})&gt;</em><a class="headerlink" href="#forms.TaskForm.yes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p>routes./logout</p>
+<blockquote>
+<div><p>The logout function terminates the login session from the user
+Arg:
+It identifies the current logged in from the database and push them out.</p>
+<p>Returns:
+User goes to the home page from the app</p>
+</div></blockquote>
+<p>routes./landing</p>
+<blockquote>
+<div><p>The landing page provides users with the add task, remove task and view task from the app</p>
+<p>Arg:
+It crates the landing page</p>
+<p>Returns:
+Returns an html page named landing</p>
+</div></blockquote>
+<p>routes./register</p>
+<blockquote>
+<div><p>The register page let user to register to the app using the user, password and answer of
+the security question.</p>
+<p>Arg:
+The information gets added to the database. Once done it sends a flash message.</p>
+<p>Return:
+If the registration was successful the user gets sent to the login page to reenter the
+information.</p>
+</div></blockquote>
+<p>routes./login</p>
+<blockquote>
+<div><p>The login helps us identify registered users from new users.</p>
+<p>Arg: If registered users successfully enters information. Then they are send to the landing
+page. At the same time, new users can register to the Task Organizer entering information in
+the login form. If user enters wrong information for username or password a flash message
+will pop.</p>
+</div></blockquote>
+<p>routes./add</p>
+<blockquote>
+<div><p>The add tasks function allow users to designate tasks and descriptions to help them keep up with the day</p>
+<p>Arg:
+It defines the task function and then it creates the task name and description and it gets saved on the database
+of the current user</p>
+<p>Returns:
+Returns the task saved in the add.html page</p>
+</div></blockquote>
+<p>routes./view</p>
+<blockquote>
+<div><p>The view function displays the saved on the database recorded by the add.html. Also if user deletes task
+they are no longer visible in the view.html page.</p>
+<p>Arg: User gets authenticated and the task function displays the task while the organize function orders the task
+alphabetically.</p>
+<p>Return: Visible on the view.html page</p>
+</div></blockquote>
+<p>routes./remove</p>
+<blockquote>
+<div><p>The remove feature allow users to delete a task.</p>
+<p>Arg:
+We created a new form named TaskForm(). This function is visible in the remove.html page.
+Once the users task is saved it's saved on the database and in order to be removed they need to
+provide with the exact task name.</p>
+<p>Return:
+The task is automatically deleted from the database.</p>
+</div></blockquote>
+<p>routes./delete_all</p>
+<blockquote>
+<div><p>The delete all feature allow us to delete all the task at the same time by one click.</p>
+<p>Arg:
+It tracks saved tasks from the database</p>
+<p>Returns:
+It displays no tasks on the remove.html file</p>
+</div></blockquote>
+<p>routes./forgot_password</p>
+<blockquote>
+<div><p>The forgot password features helps users set up a new password if forgotten.</p>
+<p>Arg:
+It displays the forgot form.</p>
+<p>Return:
+User gets the new html page.</p>
+</div></blockquote>
+<dl>
+<dt>routes./reset</dt><dd><p>The reset function let the users retrieve their account if they forgot their password</p>
+<p>Arg:
+The user when signing up to the app provided with a security question about what's their favorite color.
+If user provided the right color saved on the database they would be able to get back their account.
+We created a ForgotForm that needs to be validated with the users color and user name if the user answers
+as recorded in the database then they gets to choose their new password.</p>
+<p>Returns:
+The user is send to a reset.html page where they need to reset their password.
+If they where not able to provide them they are sent to the login page again</p>
+</dd>
+<dt>class.models.User</dt><dd><p>User Data Model</p>
+<p>Arg: Defines the class User as data model. This is where we define who our user is.
+It sets a authentication field, after that is the construction of the user field and
+relationships. Then the set up of user password hash.</p>
+<p>Return: __repr__ should return a printable representation of the object and
+it returns the User. All saved on the database.</p>
+</dd>
+<dt>class.models.Task</dt><dd><p>Declaring Models</p>
+<p>Arg: This is where we create the Task and description the user is going to save in their
+session.</p>
+<p>Return: __repr__ should return a printable representation of the object and
+it returns the Task.</p>
+</dd>
+<dt>models.load_user(id)</dt><dd><p>Flask LogIn</p>
+<p>Arg: Once user has authenticated</p>
+<p>Returns: The code logs them in with the function that insets user id into the session.</p>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Task Organizer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions in how to run this app</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">App tutorial</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Instructions in how to run this app</a></li>
+      <li>Next: <a href="tutorial.html" title="next chapter">App tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Team #2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/functions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
